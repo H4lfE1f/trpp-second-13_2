@@ -1,4 +1,4 @@
-package ru.mirea.trpp_second_13.controllers;
+package ru.mirea.trppsecond13.controllers;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import io.micronaut.http.HttpResponse;
@@ -19,7 +19,8 @@ public class CarController {
 
     /** Конструктор. */
     public CarController() {
-        carList = new CsvToBeanBuilder<Car>(new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(Car.class).build().parse();
+        carList = new CsvToBeanBuilder<Car>(new InputStreamReader(this.getClass()
+                .getResourceAsStream("/MOCK_DATA.csv"))).withType(Car.class).build().parse();
     }
 
     /**
